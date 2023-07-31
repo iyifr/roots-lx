@@ -1,13 +1,11 @@
 import { Box } from "@chakra-ui/react"
+import TopHeader from "../features/Navigation/Header"
 
 function App() {
 
   return (
     <>
-    <Box color={"gray.300"} bgColor={"pink.300"}>
-      Hello box
-    </Box>
-      Helllo
+      <TopHeader />
     </>
   )
 }
