@@ -4,10 +4,10 @@ import { Link as ChakraLink, LinkProps } from '@chakra-ui/react'
 
 
 export const Currency = () => (
-  <Select placeholder='NGN' w={'82px'} border={"none"} color={"white"} focusBorderColor="transparent">
-    <option value='option1'>CAD</option>
-    <option value='option2'>USD</option>
-    <option value='option3'>GBP</option>
+  <Select placeholder='NGN' w={'88px'} border={"none"} color={"white"} focusBorderColor="transparent">
+    <option value='option3' style={{ backgroundColor: "inherit", color: "black" }}>GBP</option>
+    <option value='option3' style={{ backgroundColor: "inherit", color: "black" }}>GBP</option>
+    <option value='option3' style={{ backgroundColor: "inherit", color: "black" }}>GBP</option>
     <option value='option3' style={{ backgroundColor: "inherit", color: "black" }}>GBP</option>
   </Select>
 )
@@ -15,14 +15,14 @@ export const Currency = () => (
 
 const TopHeader = () => (
   <>
-    <Flex justify={"space-between"} bgColor={"blue.900"} px={12} color={"white"} fontWeight={'bold'}>
+    <Flex justify={"space-between"} bgColor={"pink.900"} px={12} color={"white"} fontWeight={'semiBold'}>
       <Currency />
       <Box py={2}>
-        <ChakraLink as={ReactRouterLink} to='/home' mx={5}>
+        <ChakraLink as={ReactRouterLink} to='/' mx={5}>
           Sign in
         </ChakraLink>
 
-        <ChakraLink as={ReactRouterLink} to='/home'>
+        <ChakraLink as={ReactRouterLink} to='/'>
           Create an account
         </ChakraLink>
       </Box>

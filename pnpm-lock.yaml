@@ -14,7 +14,13 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.15)(react@18.2.0)
+  '@fontsource-variable/inter':
+    specifier: ^5.0.5
+    version: 5.0.5
   '@fontsource/italiana':
+    specifier: ^5.0.5
+    version: 5.0.5
+  '@fontsource/roboto':
     specifier: ^5.0.5
     version: 5.0.5
   framer-motion:
@@ -1569,8 +1575,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@fontsource-variable/inter@5.0.5:
+    resolution: {integrity: sha512-hmj/jffr+1tabEPmvm+/b89MtbO6hd5PVbQ6HoMGTO7RMF5eD2C9UcprCgZTOF3OWh5uC21C9HZGN0O9wxe+UQ==}
+    dev: false
+
   /@fontsource/italiana@5.0.5:
     resolution: {integrity: sha512-Ch4sbscmHE2NS7UuWzuob+ZsMhcUXE2I1+m2afYCftqxfjn54UQBroUD7+pZ4w9aqXuVtBWsFJf51qRb3bPFxQ==}
+    dev: false
+
+  /@fontsource/roboto@5.0.5:
+    resolution: {integrity: sha512-IMXFq5AMgGx0sgNLfwWsmPuy3qa7lmDmQcXXihqwF4mT2UpD725cbxZj93ERY793OWon+6V1ANax02I3nt9+4w==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
