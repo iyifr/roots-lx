@@ -1,3 +1,5 @@
+import '@fontsource/italiana/400.css';
+import '@fontsource-variable/inter';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -7,9 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import '@fontsource/italiana';
-import '@fontsource-variable/inter';
-import App from './routes/App.tsx';
+import App from './routes/Home/App.tsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider>
       <RouterProvider router={router} />
-      {/* <App /> */}
     </Provider>
   </React.StrictMode>
 );
