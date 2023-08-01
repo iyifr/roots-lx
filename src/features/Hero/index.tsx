@@ -1,4 +1,5 @@
-import { Box, Flex } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Flex, Heading } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 
 const HeroSection = () => {
     return (
@@ -9,10 +10,25 @@ const HeroSection = () => {
                 objectFit={'cover'}
                 objectPosition={'center'}
                 backgroundRepeat={'no-repeat'}
-                border={'1px solid red'}
                 maxWidth={'100%'}
                 flex={'0.5'}
             />
+
+            <Box justifyContent={"center"} alignItems={"center"} flex={"0.5"} display={'flex'} flexDirection={'column'}>
+                <Heading fontSize={'3.8em'} textAlign={"center"}>Enriching your skin to a healthy glow</Heading>
+                <motion.div
+                    initial={{
+                        x: 0,
+                        rotate: 45,
+                    }}
+                    animate={{
+                        x: 50,
+                        rotate: 270,
+                    }}
+                    style={{ backgroundColor: "black" }}
+                />
+                <Button colorScheme='green' my={6}>Shop now</Button>
+            </Box>
         </Flex>
     )
 }

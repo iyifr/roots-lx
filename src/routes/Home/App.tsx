@@ -9,6 +9,7 @@ function App() {
     <>
       <Navigation />
       <HeroSection />
+      <HeroSection />
     </>
   )
 }

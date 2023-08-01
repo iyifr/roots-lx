@@ -28,13 +28,9 @@
 
 ::-webkit-scrollbar-thumb {
   background-color: green; /* Change to the desired color */
-  border-radius: 10px; /* Change to the desired border radius */
+  border-radius: 10px;
+  height: 10px; /* Change to the desired border radius */
 }
-
-::-webkit-scrollbar-track {
-  height: 10px; /* Change to the desired height */
-}
-
 
 /* Edge and IE */
 /* Note that the color and border-radius properties are reversed */
@@ -51,4 +47,11 @@
 *::-ms-thumb {
   background-color: green; /* Change to the desired color */
   border-radius: 10px; /* Change to the desired border radius */
+}
+
+@font-face {
+  font-family: 'Italiana';
+  src: url('/node_modules/@fontsource/italiana/files/italiana-latin-400-normal.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
