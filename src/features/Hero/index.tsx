@@ -13,7 +13,6 @@ const HeroSection = () => {
                 maxWidth={'100%'}
                 flex={'0.5'}
             />
-
         </Flex>
     )
 }
