@@ -15,6 +15,8 @@ type ILinkProps = {
   label?: string,
   to: string,
   style?: object
+  icon?: any
+  children?: React.ReactNode
 }
 
 export const TextLink = ({ label = "Text link", to = '/home', style = { color: "red" } }: ILinkProps) => (
@@ -23,20 +25,31 @@ export const TextLink = ({ label = "Text link", to = '/home', style = { color: "
   </ChakraLink>
 )
 
+export const IconLink = ({ to = '/', children }: ILinkProps) => (
+  <ChakraLink as={ReactRouterLink} to={to} _hover={{ color: 'green', scale: '1.2', transition: '0.2s ease-out' }}>
+    {children}
+  </ChakraLink>
+)
+
 const TopHeader = () => (
   <>
-    <Flex justify={"space-between"} bgColor={"green.700"} px={12} color={"white"} fontWeight={'semiBold'}>
-      <Currency />
-      <Box py={2}>
-        <ChakraLink as={ReactRouterLink} to='/' mx={8}>
-          Sign in
-        </ChakraLink>
+    <Flex justify={['space-between', 'space-between', 'space-between']} align="center" bgColor="green.700" px={[2, 4, 12]} py={[2, 3]} color="white" fontWeight="semiBold" wrap="wrap">
+      <Box>
+        <Currency />
+      </Box>
 
-        <ChakraLink as={ReactRouterLink} to='/'>
-          Create an account
-        </ChakraLink>
+      <Box>
+        <Box mx={[2, 4]}>
+          <TextLink to="/" label="Sign in" style={{ color: 'white', textDecoration: 'underline' }} />
+        </Box>
+        <Box mx={[2, 4]}>
+          <TextLink to="/" label="Create an account" style={{ color: 'white', textDecoration: 'underline' }} />
+        </Box>
       </Box>
     </Flex>
   </>
+
 )
 export default TopHeader
+
+//#E3E0DD

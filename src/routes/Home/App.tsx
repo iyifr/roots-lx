@@ -1,14 +1,14 @@
 // import { Box } from "@chakra-ui/react"
-import TopHeader from "../../features/Navigation/Header"
-import Ui from "../../features/Navigation/Ui"
+import HeroSection from "../../features/Hero"
+import Navigation from "../../features/Navigation"
 
 
 function App() {
 
   return (
     <>
-      <TopHeader />
-      <Ui />
+      <Navigation />
+      <HeroSection />
     </>
   )
 }
