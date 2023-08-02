@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Heading } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import withSplashScreen from "../../hoc/splashScreen"
 
 const HeroSection = () => {
     return (
@@ -39,7 +40,7 @@ const HeroSection = () => {
     )
 }
 
-export default HeroSection
+export default withSplashScreen(HeroSection)
 
 const glowVariants = {
     glow: {

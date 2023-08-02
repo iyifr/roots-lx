@@ -1,3 +1,4 @@
+import "./index.css";
 import '@fontsource/italiana/400.css';
 import '@fontsource-variable/inter';
 import React from 'react';
@@ -8,7 +9,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import "./index.css";
 import App from './routes/Home/App.tsx';
 
 const router = createBrowserRouter([

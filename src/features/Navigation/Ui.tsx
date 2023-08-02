@@ -1,10 +1,11 @@
 import { IconLink, TextLink } from './Header'
 // import Logo from '/public/roots.svg'
-import { Flex, Heading, Divider, Box } from '@chakra-ui/react'
-import { LucideUser2, Search, ShoppingBag, ShoppingBagIcon } from 'lucide-react';
+import { Flex, Heading, Divider } from '@chakra-ui/react'
+import { LucideUser2, Search, ShoppingBag } from 'lucide-react';
 import BadgeIcon from '../../common/BadgeIcon';
+import withSplashScreen from '../../hoc/splashScreen';
 
-export default () => (
+const UI = () => (
     <>
         <Flex justify={"space-between"} maxW={[500, 600, 700, 1200]} mx={'auto'} py={1}>
 
@@ -20,7 +21,7 @@ export default () => (
             <Flex gap={6} alignItems={'center'} display={['none', 'none', 'flex']} pt={3}>
                 {
                     navIcons.map(i => (
-                        <IconLink to={i.to}> {i.icon} </IconLink>
+                        <IconLink to={i.to} key={i.id}> {i.icon} </IconLink>
                     ))
                 }
                 <IconLink to='/'>
@@ -37,3 +38,5 @@ export default () => (
 )
 
 const navIcons = [{ id: 1, icon: <LucideUser2 />, to: "/" }, { id: 2, icon: <Search />, to: "/" }]
+
+export default withSplashScreen(UI)

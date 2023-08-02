@@ -6,13 +6,16 @@ import Unfonts from 'unplugin-fonts/vite'
 export default defineConfig({
   plugins: [
     react(),
-    Unfonts({
-      fontsource: {
-        families: [
-          'Inter/variable',
-          'Italiana'
-        ]
-      }
-    })
+    // Unfonts({
+    //   fontsource: {
+    //     families: [
+    //       'Inter/variable',
+    //       {
+    //         name: 'Italiana',
+    //         weights: [400]
+    //       }
+    //     ]
+    //   }
+    // })
   ],
 })
