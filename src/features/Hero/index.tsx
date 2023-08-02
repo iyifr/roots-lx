@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, Heading } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 
 const HeroSection = () => {
@@ -14,23 +14,41 @@ const HeroSection = () => {
                 flex={'0.5'}
             />
 
-            <Box justifyContent={"center"} alignItems={"center"} flex={"0.5"} display={'flex'} flexDirection={'column'}>
-                <Heading fontSize={'3.8em'} textAlign={"center"}>Enriching your skin to a healthy glow</Heading>
-                <motion.div
-                    initial={{
-                        x: 0,
-                        rotate: 45,
-                    }}
-                    animate={{
-                        x: 50,
-                        rotate: 270,
-                    }}
-                    style={{ backgroundColor: "black" }}
-                />
-                <Button colorScheme='green' my={6}>Shop now</Button>
+            <Box
+                justifyContent={"center"}
+                alignItems={"center"}
+                as={motion.div}
+                flex={"0.5"}
+                display={'flex'}
+                flexDirection={'column'}
+                initial='opacity: 0'
+                transition='0.5s linear'>
+
+                <Heading fontSize={'3.8em'} textAlign={"center"} lineHeight={1.3} as={motion.h1}>Enriching your skin to a healthy
+                    <motion.span
+                        //@ts-expect-error
+                        variants={glowVariants}
+                        initial="initial"
+                        animate="glow"
+                        style={{ marginLeft: '3%', opacity: '0.9' }}
+                    >glow</motion.span>
+                </Heading>
+                <Button colorScheme='green' my={6} as={motion.button} whileTap={{ scale: 0.8 }}>Shop now</Button>
             </Box>
         </Flex>
     )
 }
 
 export default HeroSection
+
+const glowVariants = {
+    glow: {
+        textShadow: "0 0 10px #00ff60, 0 0 20px #00ff60, 0 0 30px #00ff60, 0 0 40px #00ff60, 0 0 70px #00ff60, 0 0 80px #00ff60, 0 0 100px #00ff60, 0 0 150px #00ff60",
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+            repeatType: 'reverse',
+            repeatDelay: 1,
+        },
+    },
+};

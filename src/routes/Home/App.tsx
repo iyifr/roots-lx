@@ -5,10 +5,10 @@ import Navigation from "../../features/Navigation"
 
 function App() {
 
+
   return (
     <>
       <Navigation />
-      <HeroSection />
       <HeroSection />
     </>
   )
