@@ -1,11 +1,11 @@
 import { IconLink, TextLink } from './Header'
 // import Logo from '/public/roots.svg'
-import { Flex, Heading, Divider } from '@chakra-ui/react'
+import { Flex, Heading, Divider, Button } from '@chakra-ui/react'
 import { LucideUser2, Search, ShoppingBag } from 'lucide-react';
 import BadgeIcon from '../../common/BadgeIcon';
 import withSplashScreen from '../../hoc/splashScreen';
 
-const UI = () => (
+const UI = ({ cartBtn }: { cartBtn: any }) => (
     <>
         <Flex justify={"space-between"} maxW={[500, 600, 700, 1200]} mx={'auto'} py={1}>
 
@@ -24,11 +24,12 @@ const UI = () => (
                         <IconLink to={i.to} key={i.id}> {i.icon} </IconLink>
                     ))
                 }
-                <IconLink to='/'>
+
+                <Button {...cartBtn}>
                     <BadgeIcon count={4} >
                         <ShoppingBag style={{ fontSize: '1.8em' }} />
                     </BadgeIcon>
-                </IconLink>
+                </Button>
 
             </Flex>
 

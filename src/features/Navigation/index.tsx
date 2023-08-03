@@ -1,10 +1,10 @@
 import TopHeader from "./Header";
 import Ui from "./Ui";
 
-export default () => (
+export default ({ buttonProps }: { buttonProps: any }) => (
 
     <>
         <TopHeader />
-        <Ui />
+        <Ui cartBtn={buttonProps} />
     </>
 )

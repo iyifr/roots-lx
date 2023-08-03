@@ -20,20 +20,17 @@ const CategoriesHero = () => (
             <Flex gap={9}>
                 {
                     categories.map((i, index) => (
-                        <HeroImage imgSrc={i.imgSrc} key={index} chakraProps={{ maxW: "45%" }} />
+                        <CategoryItem imgSrc={i.imgSrc} key={index} chakraProps={{ maxW: "45%" }} />
                     ))
                 }
             </Flex>
         </Box>
     </Box>
 )
-
-
-
 export default CategoriesHero
 
 
-const HeroImage = ({ imgSrc, chakraProps }: { imgSrc: string, chakraProps?: object }) => (
+const CategoryItem = ({ imgSrc, chakraProps }: { imgSrc: string, chakraProps?: object }) => (
     <Image
         borderRadius='20px'
         height={400}
@@ -44,8 +41,3 @@ const HeroImage = ({ imgSrc, chakraProps }: { imgSrc: string, chakraProps?: obje
         {...chakraProps}
     />
 )
-
-/*     
-            <GridItem rowSpan={2} colSpan={1} bg='tomato' />
-            <GridItem colSpan={2} bg='papayawhip' /> 
-            <GridItem colSpan={1} rowSpan={4} bg='tomato' h={'auto'} key={index} />*/
