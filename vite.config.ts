@@ -4,18 +4,17 @@ import Unfonts from 'unplugin-fonts/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    // Unfonts({
-    //   fontsource: {
-    //     families: [
-    //       'Inter/variable',
-    //       {
-    //         name: 'Italiana',
-    //         weights: [400]
-    //       }
-    //     ]
-    //   }
-    // })
-  ],
+	plugins: [
+		react(),
+		Unfonts({
+			fontsource: {
+				families: [
+					{
+						name: 'Italiana',
+						weights: [400],
+					},
+				],
+			},
+		}),
+	],
 })

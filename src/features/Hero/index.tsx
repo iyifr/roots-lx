@@ -25,7 +25,7 @@ const HeroSection = () => {
                 initial='opacity: 0'
                 transition='0.5s linear'>
 
-                <Heading fontSize={'3.8em'} textAlign={"center"} lineHeight={1.3} as={motion.h1}>Enriching your skin to a healthy
+                <Heading fontSize={'3.9em'} textAlign={"center"} lineHeight={1.5} fontWeight={"400"}>Enriching your skin to a healthy
                     <motion.span
                         //@ts-expect-error
                         variants={glowVariants}

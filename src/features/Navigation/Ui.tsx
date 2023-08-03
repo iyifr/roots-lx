@@ -10,7 +10,7 @@ const UI = () => (
         <Flex justify={"space-between"} maxW={[500, 600, 700, 1200]} mx={'auto'} py={1}>
 
             <Flex gap={[4, 6, 8]} px={[2, 0]}>
-                <Heading fontWeight={'bold'} fontSize={[28, 32, 44, 64]}>rootsLX</Heading>
+                <Heading fontSize={[28, 32, 44, 64]} fontWeight={""}>rootsLX</Heading>
                 <Flex alignItems={'center'} gap={4} fontSize={16} display={['none', 'none', 'flex']}>
                     <TextLink to='/' style={{ textTransform: "uppercase", fontSize: "14px" }} label='Shop' />
                     <TextLink to='/' style={{ textTransform: "uppercase", fontSize: "14px" }} label='Contact' />
@@ -37,6 +37,6 @@ const UI = () => (
     </>
 )
 
-const navIcons = [{ id: 1, icon: <LucideUser2 />, to: "/" }, { id: 2, icon: <Search />, to: "/" }]
+const navIcons = [{ id: 1, icon: <LucideUser2 />, to: "/" }, { id: 2, icon: <Search />, to: "/search" }]
 
 export default withSplashScreen(UI)

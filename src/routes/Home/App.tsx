@@ -1,6 +1,8 @@
 // import { Box } from "@chakra-ui/react"
 import HeroSection from "../../features/Hero"
+import CategoriesHero from "../../features/Hero/catalogue"
 import Navigation from "../../features/Navigation"
+CategoriesHero
 
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
     <>
       <Navigation />
       <HeroSection />
+      <CategoriesHero />
     </>
   )
 }

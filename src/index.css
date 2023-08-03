@@ -1,52 +1,41 @@
 :root {
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-
-@font-face {
-  font-family: 'Italiana';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/node_modules/@fontsource/italiana/files/italiana-latin-400-normal.woff2') format('woff2');
-  font-display: swap;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Turn scrollbar green */
 /* WebKit */
 ::-webkit-scrollbar {
-  width: 7px;
-  background-color: #F0F0F0; /* Change to your website's background color */
+	width: 7px;
+	background-color: #f0f0f0; /* Change to your website's background color */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: green; /* Change to the desired color */
-  border-radius: 10px;
-  height: 10px; /* Change to the desired border radius */
+	background-color: green; /* Change to the desired color */
+	border-radius: 10px;
+	height: 10px; /* Change to the desired border radius */
 }
 
 /* Edge and IE */
 /* Note that the color and border-radius properties are reversed */
 * {
-  scrollbar-color: green #F0F0F0; /* Change to the desired color and background color */
-  scrollbar-width: thin;
+	scrollbar-color: green #f0f0f0; /* Change to the desired color and background color */
+	scrollbar-width: thin;
 }
 
 *::-ms-scrollbar {
-  width: 10px;
-  background-color: #F0F0F0; /* Change to your website's background color */
+	width: 10px;
+	background-color: #f0f0f0; /* Change to your website's background color */
 }
 
 *::-ms-thumb {
-  background-color: green; /* Change to the desired color */
-  border-radius: 10px; /* Change to the desired border radius */
+	background-color: green; /* Change to the desired color */
+	border-radius: 10px; /* Change to the desired border radius */
 }

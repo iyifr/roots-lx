@@ -1,6 +1,7 @@
-import "./index.css";
+import 'unfonts.css'
+import './index.css'
 import '@fontsource/italiana/400.css';
-import '@fontsource-variable/inter';
+import '@fontsource-variable/inter'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
