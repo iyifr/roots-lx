@@ -10,13 +10,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './routes/Home/App.tsx';
+import App from './routes/App.tsx';
+import TopHeader from './features/Navigation/Header.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
   },
+
+  {
+    path: "/search",
+    element: <TopHeader />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

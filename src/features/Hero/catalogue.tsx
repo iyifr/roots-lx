@@ -12,7 +12,7 @@ export const categories = [
 
 const CategoriesHero = () => (
     <Box maxW={1200} mx={'auto'} my={8}>
-        <Heading mb={7} fontSize={36}>Catalogue</Heading>
+        <Heading mb={7} fontSize={30} textTransform={'uppercase'}>Catalogue</Heading>
         <Box
             maxW={1300}
             mx={'auto'}
@@ -34,11 +34,10 @@ const CategoryItem = ({ imgSrc, chakraProps }: { imgSrc: string, chakraProps?: o
     <Image
         borderRadius='20px'
         height={400}
-        maxW={'100%'}
+        maxW={'300px'}
         src={imgSrc}
         alt='Category Image'
         fit={'cover'}
-        loading='lazy'
         {...chakraProps}
     />
 )

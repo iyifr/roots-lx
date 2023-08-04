@@ -32,9 +32,15 @@ dependencies:
   mobx:
     specifier: ^6.10.0
     version: 6.10.0
+  mobx-react-lite:
+    specifier: ^4.0.3
+    version: 4.0.3(mobx@6.10.0)(react-dom@18.2.0)(react@18.2.0)
   mobx-state-tree:
     specifier: ^5.1.8
     version: 5.1.8(mobx@6.10.0)
+  mst-persist:
+    specifier: ^0.1.4
+    version: 0.1.4(mobx-state-tree@5.1.8)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2730,6 +2736,25 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
+  /mobx-react-lite@4.0.3(mobx@6.10.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-wEE1oT5zvDdvplG4HnRrFgPwg5GFVVrEtl42Er85k23zeu3om8H8wbDPgdbQP88zAihVsik6xJfw6VnzUl8fQw==}
+    peerDependencies:
+      mobx: ^6.9.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.10.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
   /mobx-state-tree@5.1.8(mobx@6.10.0):
     resolution: {integrity: sha512-oe82BNgMr408e6DxMDNat8msXQTuyuqzJ97DPupbhchEfjjHyjsmPSwtXHl+nXiW3tybpb/cr5siUClBqKqv+Q==}
     peerDependencies:
@@ -2745,6 +2770,14 @@ packages:
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
+
+  /mst-persist@0.1.4(mobx-state-tree@5.1.8):
+    resolution: {integrity: sha512-M9WC/5C/8WowecnrFE6Bmm8O+YM8PsIL5ARZAIK2OXZp6vsw/Fw5accdTCy4xsJeHpy42QKBkWguHw7hUL9YgA==}
+    peerDependencies:
+      mobx-state-tree: '>=3.2.1'
+    dependencies:
+      mobx-state-tree: 5.1.8(mobx@6.10.0)
+    dev: false
 
   /nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
@@ -3252,6 +3285,14 @@ packages:
       detect-node-es: 1.1.0
       react: 18.2.0
       tslib: 2.6.1
+    dev: false
+
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /vite@4.4.5:

@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
 
 const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNode }) => {
-    const [badgeCount, setBadgeCount] = useState(count);
 
 
     return (
         <Flex position="relative" alignItems="center">
             {children}
-            {badgeCount > 0 && (
+            {count > 0 && (
                 <Box
                     position="absolute"
                     top="-0.3rem"
@@ -23,7 +22,7 @@ const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNo
                     textAlign="center"
                     zIndex="docked"
                 >
-                    {badgeCount}
+                    {count}
                 </Box>
             )}
         </Flex>

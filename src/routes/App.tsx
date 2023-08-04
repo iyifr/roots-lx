@@ -1,9 +1,9 @@
 // import { Box } from "@chakra-ui/react"
 import { useDisclosure } from "@chakra-ui/react"
-import HeroSection from "../../features/Hero"
-import CategoriesHero from "../../features/Hero/catalogue"
-import Navigation from "../../features/Navigation"
-import Cart from "../../features/Cart/cartDrawer"
+import HeroSection from "../features/Hero"
+import CategoriesHero from "../features/Hero/catalogue"
+import Navigation from "../features/Navigation"
+import Cart from "../features/Cart/cartDrawer"
 
 
 function App() {
