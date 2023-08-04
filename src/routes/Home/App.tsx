@@ -4,7 +4,6 @@ import HeroSection from "../../features/Hero"
 import CategoriesHero from "../../features/Hero/catalogue"
 import Navigation from "../../features/Navigation"
 import Cart from "../../features/Cart/cartDrawer"
-Cart
 
 
 function App() {

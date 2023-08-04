@@ -5,9 +5,9 @@ import Soaps from '../../assets/sopas.jpg'
 
 
 export const categories = [
-    { name: 'Face Washes', imgSrc: Full, main: true },
-    { name: 'Face Washes', imgSrc: Kits },
-    { name: 'Face Washes', imgSrc: Soaps },
+    { id: 1, name: 'Face Washes', imgSrc: Full, main: true },
+    { id: 2, name: 'Face Washes', imgSrc: Kits },
+    { id: 3, name: 'Face Washes', imgSrc: Soaps },
 ]
 
 const CategoriesHero = () => (
@@ -19,8 +19,8 @@ const CategoriesHero = () => (
         >
             <Flex gap={9}>
                 {
-                    categories.map((i, index) => (
-                        <CategoryItem imgSrc={i.imgSrc} key={index} chakraProps={{ maxW: "45%" }} />
+                    categories.map((i) => (
+                        <CategoryItem key={i.id} imgSrc={i.imgSrc} chakraProps={{ maxW: "45%" }} />
                     ))
                 }
             </Flex>
@@ -38,6 +38,7 @@ const CategoryItem = ({ imgSrc, chakraProps }: { imgSrc: string, chakraProps?: o
         src={imgSrc}
         alt='Category Image'
         fit={'cover'}
+        loading='lazy'
         {...chakraProps}
     />
 )
