@@ -9,24 +9,27 @@ const RootModel = types.model({
 
 let initialState = RootModel.create({
 	cart: {
-		id: 1,
+		id: 5,
 		owner: 'Iyimide Jo',
 		items: [],
 	},
 })
 
-persist('root', initialState, {
-	storage: localStorage, // or AsyncStorage in react-native.
-	// default: localStorage
-	jsonify: false, // if you use AsyncStorage, this shoud be true
-	// default: true
-	whitelist: ['name'], // only these keys will be persisted
-}).then(() => console.log('Root Store has been hydrated'))
+// @ts-ignore
+
+const data = localStorage.getItem('rootState')
+if (data) {
+	const json = JSON.parse(data)
+	if (RootModel.is(json)) {
+		initialState = RootModel.create(json)
+	}
+}
 
 export const rootStore = initialState
 
 onSnapshot(rootStore, (snapshot) => {
 	console.log('Snapshot: ', snapshot)
+	localStorage.setItem('rootState', JSON.stringify(snapshot))
 })
 
 export type RootInstance = Instance<typeof RootModel>
