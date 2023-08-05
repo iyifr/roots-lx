@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Flex } from "@chakra-ui/react";
+import { observer } from "mobx-react-lite";
 
 const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNode }) => {
-
 
     return (
         <Flex position="relative" alignItems="center">
@@ -10,9 +10,9 @@ const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNo
             {count > 0 && (
                 <Box
                     position="absolute"
-                    top="-0.3rem"
-                    right="-0.3rem"
-                    bg="red.500"
+                    top="-0.8rem"
+                    right="-0.8rem"
+                    bg="green.500"
                     borderRadius="full"
                     color="white"
                     fontSize="xs"
@@ -21,6 +21,7 @@ const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNo
                     minH="1rem"
                     textAlign="center"
                     zIndex="docked"
+                    padding={0.9}
                 >
                     {count}
                 </Box>
@@ -29,4 +30,4 @@ const BadgeIcon = ({ count, children }: { count: number, children: React.ReactNo
     );
 };
 
-export default BadgeIcon;
+export default observer(BadgeIcon);

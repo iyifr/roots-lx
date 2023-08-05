@@ -1,8 +1,9 @@
 import {
     Button, Drawer, DrawerOverlay,
     DrawerContent, DrawerCloseButton, DrawerHeader,
-    DrawerBody, Input, DrawerFooter
+    DrawerBody, DrawerFooter
 } from "@chakra-ui/react"
+import CartContainer from "./CartContainer"
 
 function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClose: () => void }) {
 
@@ -12,7 +13,6 @@ function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClos
                 isOpen={isOpen}
                 placement='right'
                 onClose={onClose}
-
             >
                 <DrawerOverlay />
                 <DrawerContent>
@@ -20,14 +20,14 @@ function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClos
                     <DrawerHeader>Your Shopping cart</DrawerHeader>
 
                     <DrawerBody>
-                        <Input placeholder='Type here...' />
+                        <CartContainer />
                     </DrawerBody>
 
                     <DrawerFooter>
                         <Button variant='outline' mr={3} onClick={onClose}>
-                            Cancel
+                            Clear Cart
                         </Button>
-                        <Button colorScheme='blue'>Save</Button>
+                        <Button colorScheme='green'>Checkout</Button>
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>

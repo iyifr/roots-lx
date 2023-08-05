@@ -1,7 +1,6 @@
 import { Instance, onSnapshot, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
 import { Cart } from './User'
-import { persist } from 'mst-persist'
 
 const RootModel = types.model({
 	cart: Cart,

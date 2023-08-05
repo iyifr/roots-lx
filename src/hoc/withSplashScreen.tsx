@@ -31,21 +31,5 @@ const FullScreenLoader = () => <div style={{
     alignItems: 'center',
     height: '100vh'
 }}>
-    <Spinner size="xl" color='green.500' />
+    <Spinner size="xl" color='green.900' />
 </div>
-
-/* {loading ? return
-
-if (loading) {
-            return <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh'
-            }}>
-                <Spinner size="xl" color='blue.500' />
-            </div>
-        }
-        // Render the wrapped component once the UI has loaded
-        else return <WrappedComponent {...props} />
-}*/

@@ -1,8 +1,8 @@
 import {
 	types,
-	Instance,
-	SnapshotIn,
 	getParent,
+	SnapshotIn,
+	Instance,
 	destroy,
 } from 'mobx-state-tree'
 
@@ -53,7 +53,7 @@ export const Cart = types
 			return self.items.length
 		},
 		get totalPrice() {
-			return self.items.reduce((sum, entry) => sum + entry.price, 0)
+			return self.items.reduce((sum, entry) => sum + entry.price * entry.qty, 0)
 		},
 	}))
 

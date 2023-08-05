@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import withSplashScreen from "../../hoc/splashScreen"
+import withSplashScreen from "../../hoc/withSplashScreen"
+import { IconLink } from "../Navigation/Header"
 
 const HeroSection = () => {
     return (
@@ -34,7 +35,9 @@ const HeroSection = () => {
                         style={{ marginLeft: '3%', opacity: '0.9' }}
                     >glow</motion.span>
                 </Heading>
-                <Button colorScheme='green' my={6} as={motion.button} whileTap={{ scale: 0.8 }}>Shop now</Button>
+                <IconLink to="/search">
+                    <Button colorScheme='green' my={6} as={motion.button} whileTap={{ scale: 0.8 }}>Shop now</Button>
+                </IconLink>
             </Box>
         </Flex>
     )

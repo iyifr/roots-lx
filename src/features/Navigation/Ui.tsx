@@ -1,9 +1,9 @@
 import { IconLink, TextLink } from './Header'
 // import Logo from '/public/roots.svg'
 import { Flex, Heading, Divider, Button } from '@chakra-ui/react'
-import { LucideUser2, Search, ShoppingBag } from 'lucide-react';
-import BadgeIcon from '../../common/BadgeIcon';
-import withSplashScreen from '../../hoc/splashScreen';
+import { LucideUser2, Search } from 'lucide-react';
+import OpenCart from './cartBtn'
+import withSplashScreen from '../../hoc/withSplashScreen';
 
 const UI = ({ cartBtn }: { cartBtn: any }) => (
     <>
@@ -26,9 +26,7 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
                 }
 
                 <Button {...cartBtn}>
-                    <BadgeIcon count={4} >
-                        <ShoppingBag style={{ fontSize: '1.8em' }} />
-                    </BadgeIcon>
+                    <OpenCart />
                 </Button>
 
             </Flex>
@@ -41,3 +39,4 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
 const navIcons = [{ id: 1, icon: <LucideUser2 />, to: "/" }, { id: 2, icon: <Search />, to: "/search" }]
 
 export default withSplashScreen(UI)
+

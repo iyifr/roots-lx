@@ -1,10 +1,10 @@
 import { observer } from "mobx-react-lite";
 
-type Component = () => JSX.Element
+type Component<P = {}> = (props: P) => JSX.Element;
 
-const withObserver = (Component: Component) => {
+const withObserver = <P extends {}>(Component: Component<P>) => {
     const connectedComponent = observer(Component);
-    return connectedComponent
-}
+    return connectedComponent;
+};
 
-export default withObserver
+export default withObserver;
