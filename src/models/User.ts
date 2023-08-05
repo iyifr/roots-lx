@@ -21,11 +21,9 @@ export const CartItem = types
 		},
 		incQty(amount?: number) {
 			amount ? (self.qty += amount) : (self.qty += 1)
-			self.price *= self.qty
 		},
-		decQty(amount: number) {
+		decQty(amount: number = 1) {
 			self.qty -= amount
-			self.price *= self.qty
 		},
 	}))
 

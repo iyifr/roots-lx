@@ -2,7 +2,8 @@ import { ButtonGroup, Button, IconButton, Flex, Text } from "@chakra-ui/react"
 import withObserver from "../../hoc/withObserver"
 import { useStore } from "../../models"
 import { CartItem, CartItems } from "../../types/types"
-import { PlusIcon } from "lucide-react"
+import { Minus, PlusIcon } from "lucide-react"
+import { observer } from "mobx-react-lite"
 
 const CartContainer = () => {
     const { cart } = useStore()
@@ -24,17 +25,37 @@ const CartView = ({ items }: CartItems) => (
     </div>
 )
 
-const CartItem = ({ item }: CartItem) => (
-    <Flex flexDir={'row'} p={5} gap={2}>
+const CartItem = observer(({ item }: CartItem) => (
+    item.qty !== 0 && <Flex flexDir={'row'} p={5} gap={2}>
+
         <Flex flexDir={'column'} fontSize={13}>
             <Text fontWeight={'700'} textTransform={'capitalize'}>{item.name}</Text>
-            <Text>{`$${item.qty * item.price}`} <Text display={'inline'} color={"gray.500"}>{`$${item.price} per unit`}</Text></Text>
+            <Text>{`$${FNUM(item.qty * item.price)}`} <Text display={'inline'} color={"gray.500"}>{`$${FNUM(item.price)} per unit`}</Text></Text>
         </Flex>
-        <ButtonGroup size='sm' isAttached variant='outline'>
-            <Button>Save</Button>
-            <IconButton aria-label='Add to friends' icon={<PlusIcon />} />
+
+        <ButtonGroup size='sm' isAttached colorScheme="green" variant='outline' mx={1}>
+            <IconButton
+                aria-label='Add to cart'
+                icon={<Minus size={14} />}
+                borderRight={'none'}
+                onClick={() => item.decQty(1)}
+            />
+
+            <Button disabled={true}
+                borderRight={'none'}
+                borderLeft={'none'}>{item.qty}
+            </Button>
+
+            <IconButton aria-label='Add to cart'
+                icon={<PlusIcon size={14} />}
+                borderLeft={'none'}
+                onClick={() => item.incQty()}
+            />
         </ButtonGroup>
     </Flex>
-)
+))
+
 
 const OCartView = withObserver(CartView)
+
+const FNUM = (number: number) => new Intl.NumberFormat().format(number)
