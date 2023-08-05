@@ -5,6 +5,7 @@ import {
 	Instance,
 	destroy,
 } from 'mobx-state-tree'
+import { computed } from 'mobx'
 
 export const CartItem = types
 	.model({
@@ -19,8 +20,8 @@ export const CartItem = types
 		remove() {
 			getParent<typeof Cart>(self, 2).remove(self)
 		},
-		incQty(amount?: number) {
-			amount ? (self.qty += amount) : (self.qty += 1)
+		incQty(amount: number = 1) {
+			self.qty += amount
 		},
 		decQty(amount: number = 1) {
 			self.qty -= amount
@@ -42,8 +43,8 @@ export const Cart = types
 		remove(item: SnapshotIn<typeof CartItem>) {
 			destroy(item)
 		},
-		changeName(name: string) {
-			self.owner = name
+		clearCart() {
+			self.items.length = 0
 		},
 	}))
 	.views((self) => ({
@@ -51,7 +52,9 @@ export const Cart = types
 			return self.items.length
 		},
 		get totalPrice() {
-			return self.items.reduce((sum, entry) => sum + entry.price * entry.qty, 0)
+			return computed(() =>
+				self.items.reduce((sum, entry) => sum + entry.qty * entry.price, 0)
+			).get()
 		},
 	}))
 

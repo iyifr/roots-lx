@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import App from './routes/App.tsx';
 import TopHeader from './features/Navigation/Header.tsx';
+import { enableStaticRendering } from 'mobx-react-lite';
+enableStaticRendering(typeof window === 'undefined');
 
 const router = createBrowserRouter([
   {

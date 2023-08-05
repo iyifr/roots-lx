@@ -41,3 +41,28 @@ export type CartItem = {
 			decQty(amount: number): void
 		} & IStateTreeNode<IAnyType>
 }
+
+export type Cart = {
+	cart: {
+		id: number
+		owner: string
+		items: IMSTArray<
+			IModelType<
+				{
+					name: ISimpleType<string>
+					price: ISimpleType<number>
+					qty: ISimpleType<number>
+				},
+				{
+					changePrice(newPrice: number): void
+					remove(): void
+					incQty(amount?: number | undefined): void
+					decQty(amount?: number): void
+				},
+				_NotCustomized,
+				_NotCustomized
+			>
+		> &
+			IStateTreeNode<IAnyType>
+	}
+}

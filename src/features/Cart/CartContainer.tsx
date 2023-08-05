@@ -7,14 +7,16 @@ import { observer } from "mobx-react-lite"
 
 const CartContainer = () => {
     const { cart } = useStore()
+
     return (
         <div>
             <OCartView items={cart.items} />
+            <OCartTotal total={cart.totalPrice} />
         </div>
     )
 }
 
-export default CartContainer
+export default withObserver(CartContainer)
 
 
 const CartView = ({ items }: CartItems) => (
@@ -26,7 +28,7 @@ const CartView = ({ items }: CartItems) => (
 )
 
 const CartItem = observer(({ item }: CartItem) => (
-    item.qty !== 0 && <Flex flexDir={'row'} p={5} gap={2}>
+    <Flex flexDir={'row'} p={5} gap={2}>
 
         <Flex flexDir={'column'} fontSize={13}>
             <Text fontWeight={'700'} textTransform={'capitalize'}>{item.name}</Text>
@@ -39,6 +41,7 @@ const CartItem = observer(({ item }: CartItem) => (
                 icon={<Minus size={14} />}
                 borderRight={'none'}
                 onClick={() => item.decQty(1)}
+                isDisabled={item.qty < 1}
             />
 
             <Button disabled={true}
@@ -55,7 +58,18 @@ const CartItem = observer(({ item }: CartItem) => (
     </Flex>
 ))
 
+const CartTotal = ({ total }: { total: number }) => (
+    <div>
+        Your total is : {FNUM(total)}
+    </div>
+)
 
+export const ClearCart = () => {
+    const { cart } = useStore()
+    return <Button onClick={() => cart.clearCart()}>Clear Cart</Button>
+}
+
+const OCartTotal = withObserver(CartTotal)
 const OCartView = withObserver(CartView)
 
 const FNUM = (number: number) => new Intl.NumberFormat().format(number)
