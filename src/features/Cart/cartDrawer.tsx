@@ -1,9 +1,9 @@
 import {
-    Button, Drawer, DrawerOverlay,
+    Drawer, DrawerOverlay,
     DrawerContent, DrawerCloseButton, DrawerHeader,
     DrawerBody, DrawerFooter
 } from "@chakra-ui/react"
-import CartContainer, { ClearCart } from "./CartContainer"
+import CartContainer, { Checkout, ClearCart } from "./CartContainer"
 
 function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClose: () => void }) {
 
@@ -24,11 +24,8 @@ function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClos
                     </DrawerBody>
 
                     <DrawerFooter>
-                        <ClearCart />
-                        <Button variant='outline' mr={3} onClick={onClose}>
-                            Clear Cart
-                        </Button>
-                        <Button colorScheme='green'>Checkout</Button>
+                        <ClearCart chakraProps={{ mr: 'auto' }} />
+                        <Checkout />
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>

@@ -10,11 +10,11 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
         <Flex justify={"space-between"} maxW={[500, 600, 700, 1200]} mx={'auto'} py={1}>
 
             <Flex gap={[4, 6, 8]} px={[2, 0]}>
-                <Heading fontSize={[28, 32, 44, 64]} fontWeight={""}>rootsLX</Heading>
-                <Flex alignItems={'center'} gap={4} fontSize={16} display={['none', 'none', 'flex']}>
-                    <TextLink to='/' style={{ textTransform: "uppercase", fontSize: "14px" }} label='Shop' />
-                    <TextLink to='/' style={{ textTransform: "uppercase", fontSize: "14px" }} label='Contact' />
-                    <TextLink to='/' style={{ textTransform: "uppercase", fontSize: "14px" }} label='About' />
+                <Heading fontSize={[28, 32, 38, 44]}>rootsLX</Heading>
+                <Flex alignItems={'center'} gap={4} fontSize={16} display={['none', 'none', 'flex']} mt={3}>
+                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='Shop' />
+                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='New Arrivals' />
+                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='About' />
                 </Flex>
             </Flex>
 
@@ -25,7 +25,7 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
                     ))
                 }
 
-                <Button {...cartBtn}>
+                <Button {...cartBtn} variant={'outline'}>
                     <OpenCart />
                 </Button>
 
@@ -36,7 +36,7 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
     </>
 )
 
-const navIcons = [{ id: 1, icon: <LucideUser2 />, to: "/" }, { id: 2, icon: <Search />, to: "/search" }]
+const navIcons = [{ id: 1, icon: <LucideUser2 size={20} />, to: "/" }, { id: 2, icon: <Search size={22} />, to: "/search" }]
 
 export default withSplashScreen(UI)
 

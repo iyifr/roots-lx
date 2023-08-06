@@ -4,6 +4,8 @@ import { useStore } from "../../models"
 import { CartItem, CartItems } from "../../types/types"
 import { Minus, PlusIcon } from "lucide-react"
 import { observer } from "mobx-react-lite"
+import { IconLink } from "../Navigation/Header"
+import { motion } from "framer-motion"
 
 const CartContainer = () => {
     const { cart } = useStore()
@@ -11,7 +13,7 @@ const CartContainer = () => {
     return (
         <div>
             <OCartView items={cart.items} />
-            <OCartTotal total={cart.totalPrice} />
+            <OCartTotal total={cart.totalPrice} isEmpty={cart.isEmpty} />
         </div>
     )
 }
@@ -58,16 +60,27 @@ const CartItem = observer(({ item }: CartItem) => (
     </Flex>
 ))
 
-const CartTotal = ({ total }: { total: number }) => (
+const CartTotal = ({ total, isEmpty }: { total: number, isEmpty: boolean }) => (
     <div>
-        Your total is : {FNUM(total)}
+        <h1> {!isEmpty && <p>Total - ${FNUM(total)}</p>} </h1>
     </div>
 )
 
-export const ClearCart = () => {
+export const ClearCart = ({ chakraProps }: { chakraProps?: object }) => {
     const { cart } = useStore()
-    return <Button onClick={() => cart.clearCart()}>Clear Cart</Button>
+    return <Button onClick={() => cart.clearCart()} {...chakraProps}>Clear Cart</Button>
 }
+
+export const Checkout = observer(() => {
+    const { cart } = useStore()
+
+    return <IconLink to="/checkout/:cartId">
+        <Button colorScheme='green' as={motion.button} whileTap={{ scale: 0.8 }} isDisabled={cart.isEmpty}>
+            Checkout
+        </Button>
+    </IconLink>
+})
+
 
 const OCartTotal = withObserver(CartTotal)
 const OCartView = withObserver(CartView)

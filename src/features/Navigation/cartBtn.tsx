@@ -7,7 +7,7 @@ const OpenCart = () => {
     const { cart } = useStore()
 
     return <BadgeIcon count={cart.totalItems} >
-        <ShoppingBag style={{ fontSize: '1.8em' }} />
+        <ShoppingBag size={22} />
     </BadgeIcon>
 }
 

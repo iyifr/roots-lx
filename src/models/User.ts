@@ -56,6 +56,9 @@ export const Cart = types
 				self.items.reduce((sum, entry) => sum + entry.qty * entry.price, 0)
 			).get()
 		},
+		get isEmpty() {
+			return self.items.length === 0
+		},
 	}))
 
 export const User = types.model('UserModel', {
