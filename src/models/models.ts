@@ -4,8 +4,11 @@ import {
 	SnapshotIn,
 	Instance,
 	destroy,
+	flow,
 } from 'mobx-state-tree'
 import { computed } from 'mobx'
+import { apiService } from '../common/apiService'
+import { Product } from '../types/types'
 
 export const CartItem = types
 	.model({
@@ -69,3 +72,47 @@ export const User = types.model('UserModel', {
 	email: types.string,
 	cart: types.optional(types.array(Cart), []),
 })
+
+const Product = types.model('Product', {
+	id: types.number,
+	name: types.string,
+	price: types.string,
+	desc: types.string,
+	image: types.string,
+	categories: types.array(types.string),
+	reviews: types.array(
+		types.model({
+			userID: types.number,
+			content: types.string,
+			published: types.string,
+		})
+	),
+})
+
+export const Products = types
+	.model('Products', {
+		products: types.array(Product),
+		state: types.enumeration('State', ['pending', 'done', 'error']),
+	})
+	.actions((self) => ({
+		fetchProducts: flow(function* fetchProducts() {
+			//@ts-ignore
+			self.products = []
+			self.state = 'pending'
+			try {
+				self.products = yield apiService.get<Product[]>('/products', {
+					page: 1,
+					limit: 20,
+				})
+				self.state = 'done'
+			} catch (error) {
+				console.error('Error fetching products:', error)
+				self.state = 'error'
+			}
+		}),
+	}))
+	.views((self) => ({
+		get isLoaded() {
+			return self.state
+		},
+	}))

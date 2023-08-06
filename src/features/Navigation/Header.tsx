@@ -1,26 +1,24 @@
-import { Flex, IconButton, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { Link as ChakraLink } from '@chakra-ui/react'
 import { useState } from "react";
-import { X } from "lucide-react";
 
-type ILinkProps = {
+type LinkProps = {
   label?: string,
   to: string,
   style?: object
   icon?: any
   children?: React.ReactNode
   chakraProps?: object
-  variant?: "nav" | "default"
 }
 
-export const TextLink = ({ label = "Text link", to = '/home', chakraProps }: ILinkProps) => (
+export const TextLink = ({ label = "Text link", to = '/home', chakraProps }: LinkProps) => (
   <ChakraLink as={ReactRouterLink} to={to}  {...chakraProps}>
     {label}
   </ChakraLink>
 )
 
-export const IconLink = ({ to = '/', children, chakraProps, variant = "nav" }: ILinkProps) => (
+export const IconLink = ({ to = '/', children, chakraProps }: LinkProps) => (
   <ChakraLink as={ReactRouterLink} to={to} _hover={{ color: 'green.400', transition: '0.2s ease-in' }} {...chakraProps}>
     {children}
   </ChakraLink>

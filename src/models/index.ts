@@ -1,9 +1,10 @@
 import { Instance, onSnapshot, types } from 'mobx-state-tree'
 import { createContext, useContext } from 'react'
-import { Cart } from './User'
+import { Cart, Products } from './models'
 
 const RootModel = types.model({
 	cart: Cart,
+	products: Products,
 })
 
 let initialState = RootModel.create({
@@ -11,6 +12,10 @@ let initialState = RootModel.create({
 		id: 5,
 		owner: 'Iyimide Jo',
 		items: [],
+	},
+	products: {
+		products: [],
+		state: 'pending',
 	},
 })
 

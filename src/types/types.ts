@@ -66,3 +66,18 @@ export type Cart = {
 			IStateTreeNode<IAnyType>
 	}
 }
+
+export interface Product {
+	id: number
+	name: string
+	price: string
+	desc: string
+	image: string
+	categories: string[]
+	reviews: Review[]
+}
+
+export interface Review {
+	userId: number
+	content: string
+}
