@@ -36,6 +36,8 @@ onSnapshot(rootStore, (snapshot) => {
 	localStorage.setItem('rootState', JSON.stringify(snapshot))
 })
 
+console.log(rootStore.products.fetchProducts())
+
 export type RootInstance = Instance<typeof RootModel>
 const RootStoreContext = createContext<null | RootInstance>(null)
 

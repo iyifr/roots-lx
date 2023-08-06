@@ -74,7 +74,7 @@ export const User = types.model('UserModel', {
 })
 
 const Product = types.model('Product', {
-	id: types.number,
+	id: types.identifier,
 	name: types.string,
 	price: types.string,
 	desc: types.string,
@@ -100,10 +100,7 @@ export const Products = types
 			self.products = []
 			self.state = 'pending'
 			try {
-				self.products = yield apiService.get<Product[]>('/products', {
-					page: 1,
-					limit: 20,
-				})
+				self.products = yield apiService.get<Product[]>('/products')
 				self.state = 'done'
 			} catch (error) {
 				console.error('Error fetching products:', error)
