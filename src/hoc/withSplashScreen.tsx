@@ -13,7 +13,7 @@ function withSplashScreen<T extends WithSplashScreenProps>(WrappedComponent: Com
             // Simulate a delay in the loading of the UI
             const timeoutId = setTimeout(() => {
                 setLoading(false);
-            }, 400);
+            }, 500);
 
             // Cancel the timeout when the component unmounts
             return () => clearTimeout(timeoutId);

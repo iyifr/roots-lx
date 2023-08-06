@@ -5,7 +5,7 @@ import { IconLink } from "../Navigation/Header"
 
 const HeroSection = () => {
     return (
-        <Flex>
+        <Flex mx={4}>
             <Box
                 bgImage={"url('/stock.png')"}
                 height={'80dvh'}
@@ -13,20 +13,22 @@ const HeroSection = () => {
                 objectPosition={'center'}
                 backgroundRepeat={'no-repeat'}
                 maxWidth={'100%'}
-                flex={'0.5'}
+                flex={'0.55'}
+                borderLeftRadius={12}
             />
 
             <Box
                 justifyContent={"center"}
                 alignItems={"center"}
                 as={motion.div}
-                flex={"0.5"}
+                flex={"0.45"}
                 display={'flex'}
                 flexDirection={'column'}
                 initial='opacity: 0'
-                transition='0.5s linear'>
+                transition='0.5s linear'
+            >
 
-                <Heading fontSize={'3.9em'} textAlign={"center"} lineHeight={1.5} fontWeight={"400"}>Enriching your skin to a healthy
+                <Heading fontSize={'3.9em'} w={"89%"} textAlign={"center"} lineHeight={1.6} fontWeight={"400"}>Enriching your skin to a healthy
                     <motion.span
                         //@ts-expect-error
                         variants={glowVariants}
@@ -36,7 +38,7 @@ const HeroSection = () => {
                     >glow</motion.span>
                 </Heading>
                 <IconLink to="/search">
-                    <Button colorScheme='green' my={6} as={motion.button} whileTap={{ scale: 0.8 }}>Shop now</Button>
+                    <Button colorScheme='green' my={6} as={motion.button} whileTap={{ scale: 0.8 }}>Shop luxury</Button>
                 </IconLink>
             </Box>
         </Flex>

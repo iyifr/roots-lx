@@ -1,8 +1,6 @@
-import { Button } from "@chakra-ui/react";
 import { useStore } from "../../models";
 import TopHeader from "./Header";
 import Ui from "./Ui";
-import CartContainer from "../Cart/CartContainer";
 
 
 export default ({ buttonProps }: { buttonProps: any }) => {
@@ -14,8 +12,6 @@ export default ({ buttonProps }: { buttonProps: any }) => {
     return <>
         <TopHeader />
         <Ui cartBtn={buttonProps} />
-        <Button onClick={() => addToCart()}>Add to cart</Button>
-        <CartContainer />
     </>
 }
 

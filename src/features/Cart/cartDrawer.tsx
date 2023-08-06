@@ -17,7 +17,7 @@ function Cart({ isOpen, onClose }: { isOpen: boolean, onOpen: () => void, onClos
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerCloseButton />
-                    <DrawerHeader>Your Shopping cart</DrawerHeader>
+                    <DrawerHeader>Your Shopping Basket</DrawerHeader>
 
                     <DrawerBody>
                         <CartContainer />

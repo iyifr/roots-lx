@@ -13,6 +13,7 @@ export const CartItem = types
 		price: types.number,
 		qty: types.number,
 	})
+
 	.actions((self) => ({
 		changePrice(newPrice: number) {
 			self.price = newPrice
