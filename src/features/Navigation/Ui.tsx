@@ -12,9 +12,9 @@ const UI = ({ cartBtn }: { cartBtn: any }) => (
             <Flex gap={[4, 6, 8]} px={[2, 0]}>
                 <Heading fontSize={[28, 32, 38, 44]}>rootsLX</Heading>
                 <Flex alignItems={'center'} gap={4} fontSize={16} display={['none', 'none', 'flex']} mt={3}>
-                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='Shop' />
-                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='New Arrivals' />
-                    <TextLink to='/' chakraProps={{ fontSize: "14px" }} label='About' />
+                    <TextLink to='/' chakraProps={{ fontSize: "16px" }} label='Shop' />
+                    <TextLink to='/' chakraProps={{ fontSize: "16px" }} label='New Arrivals' />
+                    <TextLink to='/' chakraProps={{ fontSize: "16px" }} label='About' />
                 </Flex>
             </Flex>
 
