@@ -7,30 +7,18 @@ import ReactDOM from 'react-dom/client';
 
 import Provider from './providers/index.tsx';
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter
 } from "react-router-dom";
 import App from './routes/App.tsx';
-import TopHeader from './features/Navigation/Header.tsx';
 import { enableStaticRendering } from 'mobx-react-lite';
 enableStaticRendering(typeof window === 'undefined');
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-
-  {
-    path: "/search",
-    element: <TopHeader />
-  }
-]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );
